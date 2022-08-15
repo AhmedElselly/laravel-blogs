@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     // Get all posts
     public function index(){
-        $posts = Post::with('user_id')->get();
+        $posts = Post::with(['user'])->get();
         return view('posts.index', ['posts' => $posts]);
     }
     // Create form
